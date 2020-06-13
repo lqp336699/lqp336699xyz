@@ -1,0 +1,10 @@
+.beian{
+    background-color: #444;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+.beian p{
+    color:white;
+    font-size: 0.6rem;
+    text-align: center;
+}

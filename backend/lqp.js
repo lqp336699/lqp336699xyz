@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = require('./route');
+const studyDetail  = require('./studyDetail');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 5000;
@@ -14,7 +15,8 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-app.use('/',router);
+app.use('/api',router);
+app.use('/api/study',studyDetail);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
