@@ -6,14 +6,20 @@ import Uploads from './../components/uploads'
 
 
 class Register extends Component {
+    state = {
+        username:'',
+        password:'',
+        tx:''
+    };
     render() {
+
         return (
             <div>
                 <Navbar/>
                 <div className={style.container}>
 
                     <div style={{display:'flex', justifyContent: "space-between",alignItems:"center"}}>
-                        <Avatars />
+                        <Avatars tx={this.state.tx} />
                         <Uploads />
                     </div>
 
@@ -21,18 +27,31 @@ class Register extends Component {
 
                     <form className="form-signin">
                         <div className="text-center mb-4">
-                            <img className="mb-4" src="/docs/assets/brand/bootstrap-solid.svg" alt="" width="72"
-                                 height="72" />
+
                         </div>
 
                         <div className="form-label-group">
-                            <input type="username" id="用户名" className="form-control" placeholder="用户名"
-                                   required autoFocus />
+                            <input type="username"  className="form-control" placeholder="用户名"
+                                   required autoFocus
+                                   value={this.state.username}
+                                   onChange={e => {
+                                       this.setState({
+                                           username:e.target.value
+                                       });
+                                   }}
+                            />
                         </div>
 
                         <div className="form-label-group">
                             <input type="password" id="inputPassword" className="form-control" placeholder="密码"
-                                   required />
+                                   required
+                                   value={this.state.password}
+                                   onChange={e => {
+                                       this.setState({
+                                           password:e.target.value
+                                       });
+                                   }}
+                            />
                         </div>
                         <button className="btn btn-lg btn-primary btn-block" type="submit">注册</button>
                     </form>

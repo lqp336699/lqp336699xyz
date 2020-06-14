@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Upload, message } from 'antd';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import style from './upload.css'
 
 function getBase64(img, callback) {
     const reader = new FileReader();
