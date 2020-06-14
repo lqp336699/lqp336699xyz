@@ -63,6 +63,7 @@ div.lqpbg{
 
 .bg{
     background-color: #fff;
+    padding-bottom: 2rem;
 }
 
 .container{
@@ -85,6 +86,10 @@ div.lqpbg{
 }
 .body{
     background-color:rgb(244,245,245);
+}
+
+div .upBox{
+    right:70px;
 }
 
 

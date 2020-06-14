@@ -3,6 +3,7 @@ import classname from 'classnames'
 import style from './css/home.css'
 import { connect } from 'react-redux'
 import getStudyList from './../../store/action/study'
+import { BackTop } from 'antd';
 import Navbar from './../components/navbar'
 import Lqp from "../components/lqp";
 import Beian from './../components/beian'
@@ -14,8 +15,20 @@ class Home extends Component {
         studyList : []
     };
 
+
+
     render() {
         const { studyList } = this.state;
+        const upStyle = {
+            height: 40,
+            width: 40,
+            lineHeight: '40px',
+            borderRadius: 4,
+            backgroundColor: '#1088e9',
+            color: '#fff',
+            textAlign: 'center',
+            fontSize: 14,
+        };
         return (
             <div className={style.body}>
                 <Navbar />
@@ -38,6 +51,9 @@ class Home extends Component {
                 })}
                 </div>
                 <Beian />
+                <BackTop className={style.upBox}>
+                    <div style={upStyle}>UP</div>
+                </BackTop>
             </div>
         )
     }

@@ -4,3 +4,6 @@ div .list{
 .study_list{
     background-color:rgb(244,245,245);
 }
+.navPagination{
+    display: none;
+}
