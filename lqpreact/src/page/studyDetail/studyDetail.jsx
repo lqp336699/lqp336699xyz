@@ -5,6 +5,7 @@ import style from './studyDetail.css'
 import Navbar from './../components/navbar'
 import { Empty } from 'antd';
 import styleaa from './../home/css/home.css'
+import { Link } from 'react-router-dom'
 import Lqp from "../components/lqp";
 import Beian from './../components/beian'
 import Pinlun from './../components/pinlun'
@@ -35,7 +36,9 @@ class StudyDetail extends Component {
             this.state.studyDetail.map(item=>{
                 if(item.title){
                     return(
-                        <a href="#" className="list-group-item list-group-item-action list-group-item-dark" key={item._id}>{item.title}</a>
+                        <Link to={`/study/${this.state.id}/studyItem`}>
+                            <a href="#" className="list-group-item list-group-item-action list-group-item-dark" key={item._id}>{item.title}</a>
+                        </Link>
                     )
                 }})
     );
