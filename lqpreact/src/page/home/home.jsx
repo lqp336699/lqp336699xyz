@@ -7,6 +7,7 @@ import { BackTop } from 'antd';
 import Navbar from './../components/navbar'
 import Lqp from "../components/lqp";
 import Beian from './../components/beian'
+import { Skeleton } from 'antd';
 import { Link } from 'react-router-dom'
 
 
@@ -33,7 +34,10 @@ class Home extends Component {
                 <Navbar router = {this.props} />
                 <Lqp />
                 <div className={ classname(style.container,style.bg,"list") }>
-                  {  studyList.map((item)=>{
+
+                  {
+                      studyList.length === 0  ? <div><Skeleton/><Skeleton/></div>  :
+                      studyList.map((item)=>{
                       let item2 = JSON.parse(item.POST);
                       return(
                           <Link to={ `/study/${ item2.value }` } >
