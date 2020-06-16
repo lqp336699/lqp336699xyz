@@ -1,0 +1,14 @@
+:global(.ant-message span.anticon){
+    top:-2px;
+}
+:global(div.ant-spin){
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    justify-content: center;
+    z-index: 100;
+    padding-top: 15rem;
+}

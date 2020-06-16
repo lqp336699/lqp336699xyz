@@ -1,0 +1,16 @@
+:global(div.ant-list-split){
+    color:purple;
+    font-size: 0.2rem;
+    font-weight: 800;
+}
+:global(div.ant-comment-content-detail){
+    color:#000;
+    font-weight: 400;
+}
+:global(span.ant-comment-content-author-name){
+    color:rgb(221,11,111);
+}
+:global(.lqp){
+    border: 1px solid #000;
+    background-color: red;
+}

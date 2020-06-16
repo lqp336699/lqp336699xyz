@@ -10,12 +10,11 @@ import Beian from './../components/beian'
 import { Link } from 'react-router-dom'
 
 
+
 class Home extends Component {
     state={
         studyList : []
     };
-
-
 
     render() {
         const { studyList } = this.state;
@@ -31,7 +30,7 @@ class Home extends Component {
         };
         return (
             <div className={style.body}>
-                <Navbar />
+                <Navbar router = {this.props} />
                 <Lqp />
                 <div className={ classname(style.container,style.bg,"list") }>
                   {  studyList.map((item)=>{
@@ -72,7 +71,7 @@ class Home extends Component {
 
 const mapStateToProps =(state)=>{
     return{
-        studyList: state.getStudyList
+        studyList: state.getStudyList,
     }
 };
 

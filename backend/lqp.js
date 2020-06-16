@@ -1,6 +1,8 @@
 const express = require('express');
-const router  = require('./route');
+const home  = require('./home');
 const studyDetail  = require('./studyDetail');
+const login  = require('./login');
+const register  = require('./register');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 5000;
@@ -15,10 +17,13 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-app.use('/api',router);
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use('/api/home',home);
+app.use('/api/login',login);
 app.use('/api/study',studyDetail);
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use('/api/register',register);
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 

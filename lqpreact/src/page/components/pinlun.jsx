@@ -1,64 +1,141 @@
 import React, {Component} from 'react';
 import { Comment, Avatar, Form, Button, List, Input } from 'antd';
-import moment from 'moment';
+import { connect } from 'react-redux'
+import Cookie from "react-cookies";
+import { setPinLun } from './../../store/action/getStudyDetail'
+import { getPinLun } from './../../store/action/getStudyDetail'
+import pinLunStyle from './pinLun.css'
+
 
 const { TextArea } = Input;
 
 const CommentList = ({ comments }) => (
     <List
+        className={pinLunStyle.lqp}
         dataSource={comments}
-        header={`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`}
+        header={`${comments.length} ${comments.length > 1 ? '个评论' : '个评论'}`}
         itemLayout="horizontal"
         renderItem={props => <Comment {...props} />}
     />
 );
 
-const Editor = ({ onChange, onSubmit, submitting, value }) => (
-    <>
-        <Form.Item>
-            <TextArea rows={4} onChange={onChange} value={value} />
-        </Form.Item>
-        <Form.Item>
-            <Button htmlType="submit" loading={submitting} onClick={onSubmit} type="primary">
-                发表你的意见
-            </Button>
-        </Form.Item>
-    </>
-);
-
-
+// const Editor = ({ onChange, onSubmit, submitting, value }) => (
+//     <>
+//         <Form.Item>
+//             <TextArea rows={4} onChange={onChange} value={value} />
+//         </Form.Item>
+//         <Form.Item>
+//             <Button  htmlType="submit" loading={ submitting } onClick={ onSubmit } type="primary">
+//                 发表你的意见
+//             </Button>
+//         </Form.Item>
+//     </>
+// );
 
 class Pinlun extends Component {
-    state = {
-        comments: [],
-        submitting: false,
-        value: '',
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            bTS:false,
+            comments: [],
+            submitting: false,
+            value: '',
+        };
+    }
+    render() {
 
-    handleSubmit = () => {
-        if (!this.state.value) {
-            return;
-        }
+        console.log(this.props.userInfo);
 
-        this.setState({
-            submitting: true,
-        });
+        const { comments, submitting, value } = this.state;
+        const { tx, username } = this.props.userInfo;
+        console.log(this.props.userInfo);
+        return (
+            <>
+                {comments.length > 0 && <CommentList  comments={comments} />}
+                <Comment
+                    avatar={
+                        <Avatar
+                            src={tx}
+                            alt={username}
+                        />
+                    }
+                    content={
+                        <>
+                            <Form.Item>
+                                <TextArea rows={4} onChange={this.handleChange} value={value} />
+                            </Form.Item>
+                            <Form.Item>
+                                <Button disabled={ username ? false : true }  htmlType="submit" loading={ submitting } onClick={ this.handleSubmit.bind(this,{tx,username}) } type="primary">
+                                    { username ? "发表你的意见" : "请登录" }
+                                </Button>
+                            </Form.Item>
+                        </>
 
-        setTimeout(() => {
+                        // <Editor
+                        //
+                        //     onChange={this.handleChange}
+                        //     onSubmit={this.handleSubmit.bind(this,{tx,username})}
+                        //     submitting={submitting}
+                        //     value={value}
+                        // />
+                    }
+                />
+            </>
+        );
+    }
+
+    componentDidMount() {
+        this.props.getPinLun(this.props.lesson).then(res=>{
+                res.json().then(res2=>{
+                    let a =[];
+                    res2.map(item=>{
+                        item.content=<p>{item.content.props.children}</p>;
+                        a.push(item)
+                    });
+                    this.setState({
+                        comments:a,
+                    });
+                })
+        })
+    }
+
+
+    handleSubmit = (data) => {
+        if(Cookie.load("lqp336699_userId")){
+            if (!this.state.value) {
+                return;
+            }
             this.setState({
-                submitting: false,
-                value: '',
-                comments: [
-                    {
-                        author: 'Han Solo',
-                        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-                        content: <p>{this.state.value}</p>,
-                        datetime: moment().fromNow(),
-                    },
-                    ...this.state.comments,
-                ],
+                submitting: true,
             });
-        }, 1000);
+            let {tx,username} = data;
+            let today = new Date();
+            let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            let comments =[
+                {
+                    author: username,
+                    avatar: tx,
+                    content: <p>{this.state.value}</p>,
+                    datetime:date,
+                    id:this.props.lesson
+                },
+                ...this.state.comments
+            ];
+            this.props.setPinLun( {
+                author: username,
+                avatar: tx,
+                content: <p>{this.state.value}</p>,
+                datetime:date,
+                id:this.props.lesson
+            });
+            setTimeout(() => {
+                this.setState({
+                    submitting: false,
+                    value: '',
+                    comments,
+                });
+            }, 500);
+        }
     };
 
     handleChange = e => {
@@ -66,32 +143,13 @@ class Pinlun extends Component {
             value: e.target.value,
         });
     };
-
-    render() {
-        const { comments, submitting, value } = this.state;
-
-        return (
-            <>
-                {comments.length > 0 && <CommentList comments={comments} />}
-                <Comment
-                    avatar={
-                        <Avatar
-                            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                            alt="Han Solo"
-                        />
-                    }
-                    content={
-                        <Editor
-                            onChange={this.handleChange}
-                            onSubmit={this.handleSubmit}
-                            submitting={submitting}
-                            value={value}
-                        />
-                    }
-                />
-            </>
-        );
-    }
 }
 
-export default Pinlun;
+const mapStateToProps = (store)=>{
+    return{
+        userInfo:store.saveUserReducer,
+        pinLun:store.StudyDetailReducer.PinLun
+    }
+};
+
+export default connect(mapStateToProps,{ setPinLun,getPinLun })(Pinlun);

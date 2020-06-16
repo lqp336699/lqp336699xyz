@@ -1,16 +1,28 @@
 import React, {Component} from 'react';
 import style from "../home/css/home.css";
 import classname from "classnames";
+import { message } from 'antd';
 import { Link } from 'react-router-dom'
 import { Modal } from 'antd';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Avatar } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { connect } from 'react-redux';
+import { Spin } from 'antd';
+import Cookie from "react-cookies";
+import { saveUserId,removeUser } from "../../store/action/home";
 
 
 
 class Navbar extends Component {
+    constructor(props){
+        super(props)
+    }
 
-    state = {visible: false};
+    state = {
+        visible: false,
+        spinning:false,
+    };
 
     showModal = () => {
         this.setState({
@@ -19,14 +31,12 @@ class Navbar extends Component {
     };
 
     handleOk = e => {
-        console.log(e);
         this.setState({
             visible: false,
         });
     };
 
     handleCancel = e => {
-        console.log(e);
         this.setState({
             visible: false,
         });
@@ -35,8 +45,33 @@ class Navbar extends Component {
 
 
     render() {
+        let { username,tx } = this.props.userInfo;
+        const LR = (
+            <>
+                <Link to='/login'>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">登录</a>
+                    </li>
+                </Link>
+                <Link to='/register'>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">注册</a>
+                    </li>
+                </Link>
+            </>
+        );
 
-
+        const userUi =(
+            <>
+                <li className="nav-item">
+                    <a className="nav-link" style={{display:'flex',justifyContent:"center",alignItems:"center"}} >
+                        <Avatar src={tx} />
+                        <p style={{width:"8rem",margin:"0.1rem 0 0 0.5rem", color:"#197", fontWeight:"700",overflow:"hidden" ,textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{username}</p>
+                        <p style={{width:"2rem",fontSize:'0.2rem', margin:"0.1rem 0 0 0", color:"#911", fontWeight:"300",overflow:"hidden" ,textOverflow:"ellipsis",whiteSpace:"nowrap"}} onClick={ this.LoginOut }>退出账号</p>
+                    </a>
+                </li>
+            </>
+        );
 
         const spuerUser = (
             <Form
@@ -82,6 +117,7 @@ class Navbar extends Component {
         );
             return (
                 <div className={classname(style.nav, style.padd, "bg-light")}>
+                    <Spin tip="Loading..." spinning={this.state.spinning} />
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         <Link to='/'>
                             <a className="navbar-brand" href="#">LQP</a>
@@ -114,20 +150,11 @@ class Navbar extends Component {
                                         <a className="dropdown-item" href="#" onClick={this.showModal}>修改科目</a>
                                     </div>
                                 </li>
-                                <Link to='/login'>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">登录</a>
-                                    </li>
-                                </Link>
-                                <Link to='/register'>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">注册</a>
-                                    </li>
-                                </Link>
+                                { username ? userUi : LR }
 
                             </ul>
                             <form className="form-inline my-2 my-lg-0">
-                                <input className="form-control mr-sm-2" type="search" placeholder="Search"
+                                <input className="form-control mr-sm-2" type="search" placeholder="暂未开发"
                                        aria-label="Search"/>
                                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                             </form>
@@ -146,8 +173,37 @@ class Navbar extends Component {
                 </div>
             )
         }
+        componentDidMount() {
+            let User = Cookie.load("lqp336699_userId");
+            if(User){
+                this.props.saveUserId(User.username);
+            }
+        }
+
+        LoginOut = ()=>{
+            this.setState({
+                spinning:true
+            });
+            Cookie.remove("lqp336699_userId");
+            this.props.removeUser();
+            setTimeout(()=>{
+                message.success({
+                    content: '用户退出成功',
+                    duration:3,
+                });
+                this.setState({
+                    spinning:false
+                })
+            },200)
+        }
+}
+
+const mapStateToProps = (store)=>{
+    return{
+        userInfo:store.saveUserReducer
+    }
 };
 
 
 
-export default Navbar;
+export default connect(mapStateToProps,{ saveUserId,removeUser })(Navbar) ;

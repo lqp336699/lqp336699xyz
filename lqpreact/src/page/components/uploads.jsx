@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Upload, message } from 'antd';
+import style from './upload.css'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 
 function getBase64(img, callback) {
@@ -21,6 +22,9 @@ function beforeUpload(file) {
 }
 
 class Uploads extends Component {
+    constructor(props){
+        super(props);
+    }
 
     state = {
         loading: false,
@@ -33,12 +37,13 @@ class Uploads extends Component {
         }
         if (info.file.status === 'done') {
             // Get this url from response in real world.
-            getBase64(info.file.originFileObj, imageUrl =>
-                this.setState({
-                    imageUrl,
-                    loading: false,
-                }),
-            );
+            getBase64(info.file.originFileObj, imageUrl =>{
+                    this.setState({
+                        imageUrl,
+                        loading: false,
+                    });
+                        this.props.getTx(imageUrl)
+            });
         }
     };
     render() {
@@ -60,7 +65,7 @@ class Uploads extends Component {
                 beforeUpload={beforeUpload}
                 onChange={this.handleChange}
             >
-                {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+                { uploadButton }
             </Upload>
         )
     }

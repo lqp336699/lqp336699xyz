@@ -10,13 +10,37 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true }, f
 
     var db = client.db('lqp336699');
 
-    studyDetail.post('/:id',function(req,res){
-        let id = req.params.id;
+    studyDetail.post('/pinLun',function(req,res){
+        let id =  req.body.id;
+        db.collection(`${id}PinLun`). insertOne(req.body,(function(err, result) {
+            if (err) throw err;
+            console.log("文档插入成功");
+            return res.json({success:"OK"});
+        }));
+    });
+
+    studyDetail.post('/lesson/:id',function(req,res){
+        let id = req.body.id;
         db.collection(id). find({}).toArray(function(err, result) {
             if (err) throw err;
-            res.json(result)
+            console.log();
+            res.json(result);
         });
     });
+
+    studyDetail.post('/getPinLun',function(req,res){
+        let id = req.body.id;
+        console.log(`${id}PinLun`);
+        db.collection(`${id}PinLun`). find({}).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result);
+            res.json(result);
+            return false;
+        });
+    });
+
+
+
 });
 
 module.exports = studyDetail;

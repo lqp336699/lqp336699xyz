@@ -7,10 +7,9 @@ class Avatars extends Component {
         super(props)
     }
     render() {
-        console.log(this.props);
         return (
             <div style={{display:'flex',alignItems:"center"}}>
-                    <Avatar size={64} icon={<UserOutlined />} />
+                    <Avatar size={64} src={`${this.props.tx}`} icon={<UserOutlined />} />
             </div>
         )
     }
