@@ -90,7 +90,7 @@ class Register extends Component {
                             this.setState({
                                 spinning:false
                             });
-                        },1000);
+                        },200);
                     }else{
                         Cookies.save("lqp336699_userId",{"username":username});
                         message.success({

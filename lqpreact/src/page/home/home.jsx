@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import classname from 'classnames'
 import style from './css/home.css'
 import { connect } from 'react-redux'
-import getStudyList from './../../store/action/study'
 import { BackTop } from 'antd';
-import Lqp from "../components/lqp";
 import Beian from './../components/beian'
 import { Skeleton } from 'antd';
 import { Link } from 'react-router-dom'
@@ -12,10 +10,24 @@ import { Link } from 'react-router-dom'
 
 
 class Home extends Component {
-    state={
-        studyList : []
-    };
 
+    state ={
+        studyList:[
+            { img:'./img/1.png',value:'react' },
+            { img:'./img/2.png',value:'HTML' },
+            { img:'./img/12.png',value:'JS' },
+            { img:'./img/3.png',value:'CSS' },
+            { img:'./img/4.png',value:'VUE' },
+            { img:'./img/13.png',value:'nginx' },
+            { img:'./img/5.png',value:'ES6' },
+            { img:'./img/8.png',value:'微信小程序' },
+            { img:'./img/7.png',value:'UI库' },
+            { img:'./img/10.png',value:'LINUX' },
+            { img:'./img/9.png',value:'HTTP' },
+            { img:'./img/6.png',value:'移动端' },
+            { img:'./img/11.png',value:'BUG合集' }
+        ]
+    };
     render() {
         const { studyList } = this.state;
         const upStyle = {
@@ -27,22 +39,23 @@ class Home extends Component {
             color: '#fff',
             textAlign: 'center',
             fontSize: 14,
+
         };
         return (
             <div className={style.body}>
                 <div className={ classname(style.container,style.bg,"list") }>
-
                   {
                       studyList.length === 0  ? <div><Skeleton/><Skeleton/></div>  :
                       studyList.map((item)=>{
-                      let item2 = JSON.parse(item.POST);
                       return(
-                          <Link to={ `/study/${ item2.value }` } >
+                          <Link to={ `/study/${ item.value }` } >
                               <div className={style.list_box}>
-                                  <div className="card" style={{width: "12rem"}}>
-                                      <img src={ item2.thumbUrl } className="card-img-top" alt="..." />
+                                  <div className="card" style={{width: "12rem",overflow:"hidden"}}>
+                                      <div style={{width: "12rem", overflow:"hidden"}}>
+                                          <img  src={ item.img } className="card-img-top" alt="..." />
+                                      </div>
                                       <div className="card-body">
-                                          <h4 className={ classname(style.card_title,"card-title") }>{ item2.value }</h4>
+                                          <h4 className={ classname(style.card_title,"card-title") }>{ item.value }</h4>
                                       </div>
                                   </div>
                               </div>
@@ -58,22 +71,10 @@ class Home extends Component {
         )
     }
     componentDidMount() {
-        this.props.getStudyList().then(studyList=>{
-            studyList.json().then(
-                res2=>{
-                    this.setState({
-                        studyList:res2
-                    })
-                }
-            )
-        });
+
     }
 }
 
-const mapStateToProps =(state)=>{
-    return{
-        studyList: state.getStudyList,
-    }
-};
 
-export default connect(mapStateToProps,{ getStudyList })(Home);
+
+export default connect()(Home);
