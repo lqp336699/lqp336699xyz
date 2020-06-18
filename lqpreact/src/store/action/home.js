@@ -27,6 +27,12 @@ const hanelSaveUserId = (res)=>{
 export const removeUser = ()=>{
   return{
       type: REMOVE_USER ,
-      payload:{}
+      payload:{
+          login:'error',
+          userInfo:{
+              tx:'',
+              username:'',
+          }
+      }
   }
 };

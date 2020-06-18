@@ -43,12 +43,8 @@ class Pinlun extends Component {
         };
     }
     render() {
-
-        console.log(this.props.userInfo);
-
         const { comments, submitting, value } = this.state;
         const { tx, username } = this.props.userInfo;
-        console.log(this.props.userInfo);
         return (
             <>
                 {comments.length > 0 && <CommentList  comments={comments} />}
@@ -147,7 +143,7 @@ class Pinlun extends Component {
 
 const mapStateToProps = (store)=>{
     return{
-        userInfo:store.saveUserReducer,
+        userInfo:store.saveUserReducer.userInfo,
         pinLun:store.StudyDetailReducer.PinLun
     }
 };

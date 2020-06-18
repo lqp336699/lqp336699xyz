@@ -21,7 +21,13 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true }, f
             if(flag){
                 res.json({login:"success",userInfo})
             }else{
-                res.json({login:"password is error"})
+                res.json({
+                    login:"password is error",
+                    userInfo:{
+                        username:'',
+                        tx:''
+                    }
+                })
             }
         }));
     });

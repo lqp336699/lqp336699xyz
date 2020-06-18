@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Navbar from "../components/navbar";
 import style from "../login/login.css";
 import Avatars from './../components/avatars '
 import Uploads from './../components/uploads'
@@ -27,18 +26,13 @@ class Register extends Component {
             <div>
                 <Spin tip="Loading..." spinning={this.state.spinning} />
 
-                <Navbar/>
                 <div className={style.container}>
                     <form onSubmit={this.handelClick}>
                     <div style={{display:'flex', justifyContent: "space-between",alignItems:"center"}}>
                         <Avatars  tx={this.state.tx} />
                         <Uploads getTx = { this.getTx } />
                     </div>
-
-                        <div className="text-center mb-4">
-
-                        </div>
-
+                        <div className="text-center mb-4" />
                         <div className="form-label-group">
                             <input type="username"  className="form-control" placeholder="用户名"
                                    required autoFocus
@@ -81,7 +75,11 @@ class Register extends Component {
             this.setState({
                 spinning:true
             });
-            this.props.registerAction(this.state).then(res=>{
+            this.props.registerAction({
+                username:username,
+                password:password,
+                tx:tx
+            }).then(res=>{
                 res.json().then(res2=>{
                     if(res2.name === "repeat"){
                         message.warning({

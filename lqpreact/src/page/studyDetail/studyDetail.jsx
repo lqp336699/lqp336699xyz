@@ -2,11 +2,9 @@ import React, {Component} from 'react';
 import classname from 'classnames'
 import homeStudy from './../home/css/home.css'
 import style from './studyDetail.css'
-import Navbar from './../components/navbar'
 import { Empty } from 'antd';
 import styleaa from './../home/css/home.css'
 import { Link } from 'react-router-dom'
-import Lqp from "../components/lqp";
 import Beian from './../components/beian'
 import Pinlun from './../components/pinlun'
 import { BackTop } from 'antd';
@@ -77,9 +75,7 @@ class StudyDetail extends Component {
 
         return (
             <div className={homeStudy.body}>
-                <Navbar />
                 <div className={classname(homeStudy.container,style.study_list)}>
-                    <Lqp/>
                     <div className={classname("list-group",style.list)}>
                         {
                             this.state.studyDetail.length === 0 ? nonestudyDetail : studyDetailBox

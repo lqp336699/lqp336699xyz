@@ -1,7 +1,4 @@
 import { HOME_USERID } from './../container/index';
-import { message } from 'antd';
-import { Spin } from 'antd';
-
 
 const url = process.env.NODE_ENV !== 'development' ?  'http://lqp336699.xyz' :'http://localhost:5000';
 
@@ -16,7 +13,7 @@ export const loginAction =(userData)=> {
             headers: myHeaders,
             body:JSON.stringify(userData)
         }).then(res => {
-           let res3 = res.clone()
+           let res3 = res.clone();
             res.json().then(data=>{
                 dispatch(hanelLogin(data))
             });

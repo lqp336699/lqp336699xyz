@@ -10,7 +10,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { Spin } from 'antd';
 import Cookie from "react-cookies";
-import { saveUserId,removeUser } from "../../store/action/home";
+import { removeUser } from "../../store/action/home";
 
 
 
@@ -42,10 +42,9 @@ class Navbar extends Component {
         });
     };
 
-
-
     render() {
-        let { username,tx } = this.props.userInfo;
+
+        let { userInfo } = this.props.userInfo;
         const LR = (
             <>
                 <Link to='/login'>
@@ -65,8 +64,8 @@ class Navbar extends Component {
             <>
                 <li className="nav-item">
                     <a className="nav-link" style={{display:'flex',justifyContent:"center",alignItems:"center"}} >
-                        <Avatar src={tx} />
-                        <p style={{width:"8rem",margin:"0.1rem 0 0 0.5rem", color:"#197", fontWeight:"700",overflow:"hidden" ,textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{username}</p>
+                        <Avatar src={userInfo.tx} />
+                        <p style={{width:"8rem",margin:"0.1rem 0 0 0.5rem", color:"#197", fontWeight:"700",overflow:"hidden" ,textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{userInfo.username}</p>
                         <p style={{width:"2rem",fontSize:'0.2rem', margin:"0.1rem 0 0 0", color:"#911", fontWeight:"300",overflow:"hidden" ,textOverflow:"ellipsis",whiteSpace:"nowrap"}} onClick={ this.LoginOut }>退出账号</p>
                     </a>
                 </li>
@@ -150,7 +149,7 @@ class Navbar extends Component {
                                         <a className="dropdown-item" href="#" onClick={this.showModal}>修改科目</a>
                                     </div>
                                 </li>
-                                { username ? userUi : LR }
+                                { userInfo.username ? userUi : LR }
 
                             </ul>
                             <form className="form-inline my-2 my-lg-0">
@@ -173,12 +172,6 @@ class Navbar extends Component {
                 </div>
             )
         }
-        componentDidMount() {
-            let User = Cookie.load("lqp336699_userId");
-            if(User){
-                this.props.saveUserId(User.username);
-            }
-        }
 
         LoginOut = ()=>{
             this.setState({
@@ -199,6 +192,7 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (store)=>{
+    console.log(store.saveUserReducer);
     return{
         userInfo:store.saveUserReducer
     }
@@ -206,4 +200,4 @@ const mapStateToProps = (store)=>{
 
 
 
-export default connect(mapStateToProps,{ saveUserId,removeUser })(Navbar) ;
+export default connect(mapStateToProps,{ removeUser })(Navbar) ;

@@ -4,7 +4,6 @@ import style from './css/home.css'
 import { connect } from 'react-redux'
 import getStudyList from './../../store/action/study'
 import { BackTop } from 'antd';
-import Navbar from './../components/navbar'
 import Lqp from "../components/lqp";
 import Beian from './../components/beian'
 import { Skeleton } from 'antd';
@@ -31,8 +30,6 @@ class Home extends Component {
         };
         return (
             <div className={style.body}>
-                <Navbar router = {this.props} />
-                <Lqp />
                 <div className={ classname(style.container,style.bg,"list") }>
 
                   {

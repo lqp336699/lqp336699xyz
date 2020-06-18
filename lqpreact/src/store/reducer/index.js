@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-import getStudyList from './../reducer/study'
-import StudyDetailReducer from './../reducer/getStudyDetail'
-import regestReducer from './../reducer/register'
-import { saveUserReducer } from './../reducer/home'
+import { getStudyList } from './getStudyList'
+import { StudyDetailReducer } from './../reducer/getStudyDetail'
+import { saveUserReducer } from './loginRegister'
+import { music } from './../reducer/music'
 
 const rootReducer = combineReducers({
-    getStudyList,StudyDetailReducer,regestReducer,saveUserReducer
+    getStudyList,StudyDetailReducer,saveUserReducer,music
 });
 
 export default rootReducer;

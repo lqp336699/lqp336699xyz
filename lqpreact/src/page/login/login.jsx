@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './../components/navbar'
 import style from './login.css'
 import { connect } from 'react-redux'
 import Cookie from "react-cookies";
@@ -14,11 +13,8 @@ class Login extends React.Component{
     };
     render(){
         return(
-            <div>
-                <Navbar/>
-                <Spin tip="Loading..." spinning={this.state.spinning} />
-
                 <div className={style.container}>
+                    <Spin tip="Loading..." spinning={this.state.spinning} />
 
                     <form className="form-signin" onSubmit={e=>{
                         e.preventDefault();
@@ -55,7 +51,6 @@ class Login extends React.Component{
                         <button className="btn btn-lg btn-primary btn-block" type="submit" onClick={this.login}>登录</button>
                     </form>
                 </div>
-            </div>
         )
     }
 
@@ -63,7 +58,6 @@ class Login extends React.Component{
         let { username,password } = this.state;
         this.props.loginAction({ username,password }).then(res=>{
             res.json().then(res2=>{
-                console.log(res2.login);
                 if(res2.login === "success"){
                     this.setState({
                         spinning:true

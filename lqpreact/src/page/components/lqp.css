@@ -1,0 +1,26 @@
+.lqp{
+    text-align: center;
+    line-height: 2rem;
+    height: 2rem;
+    background:rgb(52,152,219);
+    color:white;
+    margin: 1rem  0;
+}
+div.lqpbg{
+    background:rgb(52,152,219) url("./../../asset/music.jpg") no-repeat 41.2rem 0;
+    -webkit-background-size: 2rem;
+    background-size: 2rem;
+}
+.pb{
+    padding: 0.2rem 0;
+    background-color:rgb(244,245,245);
+}
+.lqp{
+    text-align: center;
+    line-height: 2rem;
+    height: 2rem;
+    background:rgb(52,152,219);
+    color:white;
+    margin: 1rem  0;
+}
+
