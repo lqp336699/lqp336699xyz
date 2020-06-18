@@ -23,7 +23,6 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true }, f
         let id = req.body.id;
         db.collection(id). find({}).toArray(function(err, result) {
             if (err) throw err;
-            console.log();
             res.json(result);
         });
     });
@@ -33,7 +32,6 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true }, f
         console.log(`${id}PinLun`);
         db.collection(`${id}PinLun`). find({}).toArray(function(err, result) {
             if (err) throw err;
-            console.log(result);
             res.json(result);
             return false;
         });

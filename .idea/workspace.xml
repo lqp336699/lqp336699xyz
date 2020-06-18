@@ -4,29 +4,11 @@
     <list default="true" id="4410afef-c2a1-4d1e-9421-026df21d527a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/index.sass" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/index.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/page/components/lqp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/components/lqp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/page/components/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/components/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/page/components/pinlun.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/components/pinlun.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/page/home/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/home/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/studyDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/studyDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lqpreact/src/page/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/home/home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/page/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/login/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/page/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/login/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/page/register/register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/register/register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/page/studyDetail/studyDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/page/studyDetail/studyDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/action/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/store/action/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/action/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/store/action/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/action/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/store/action/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/container/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/store/container/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/reducer/getStudyDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/store/reducer/getStudyDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/reducer/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/store/reducer/loginRegister.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/store/reducer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/reducer/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/reducer/register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lqpreact/src/store/reducer/study.js" beforeDir="false" afterPath="$PROJECT_DIR$/lqpreact/src/store/reducer/getStudyList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,10 +22,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/pinlun.jsx">
+        <entry file="file://$PROJECT_DIR$/lqpreact/src/page/home/home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="961">
-              <caret line="69" column="34" lean-forward="true" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+            <state relative-caret-position="440">
+              <caret line="52" column="89" selection-start-line="52" selection-start-column="89" selection-end-line="52" selection-end-column="89" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -112,19 +94,15 @@
         <option value="$PROJECT_DIR$/backend/home.js" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/components/comments.jsx" />
         <option value="$PROJECT_DIR$/lqpreact/src/store/action/getStudyDetail.js" />
-        <option value="$PROJECT_DIR$/backend/studyDetail.js" />
-        <option value="$PROJECT_DIR$/backend/register.js" />
         <option value="$PROJECT_DIR$/backend/lqp.js" />
         <option value="$PROJECT_DIR$/lqpreact/src/store/reducer/login.js" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/components/editor.jsx" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/components/pinLun.css" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/studyItem/studyItem.jsx" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/home/css/home.css" />
-        <option value="$PROJECT_DIR$/lqpreact/src/page/components/lqp.css" />
         <option value="$PROJECT_DIR$/lqpreact/src/store/container/index.js" />
         <option value="$PROJECT_DIR$/lqpreact/src/store/action/music.js" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/components/lqp.jsx" />
-        <option value="$PROJECT_DIR$/lqpreact/src/page/home/home.jsx" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/studyDetail/studyDetail.jsx" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/login/login.css" />
         <option value="$PROJECT_DIR$/lqpreact/src/router/index.js" />
@@ -143,10 +121,14 @@
         <option value="$PROJECT_DIR$/lqpreact/src/store/reducer/getStudyDetail.js" />
         <option value="$PROJECT_DIR$/lqpreact/src/store/action/login.js" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/login/login.jsx" />
-        <option value="$PROJECT_DIR$/lqpreact/src/page/register/register.jsx" />
         <option value="$PROJECT_DIR$/lqpreact/src/store/action/register.js" />
-        <option value="$PROJECT_DIR$/backend/login.js" />
         <option value="$PROJECT_DIR$/lqpreact/src/page/components/pinlun.jsx" />
+        <option value="$PROJECT_DIR$/backend/studyDetail.js" />
+        <option value="$PROJECT_DIR$/backend/login.js" />
+        <option value="$PROJECT_DIR$/backend/register.js" />
+        <option value="$PROJECT_DIR$/lqpreact/src/page/register/register.jsx" />
+        <option value="$PROJECT_DIR$/lqpreact/src/page/components/lqp.css" />
+        <option value="$PROJECT_DIR$/lqpreact/src/page/home/home.jsx" />
       </list>
     </option>
   </component>
@@ -181,7 +163,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,17 +194,21 @@
               <item name="lqpreact" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lqp336699" type="b2602c69:ProjectViewProjectNode" />
               <item name="lqp336699" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="lqpreact" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,14 +298,16 @@
       <workItem from="1592228009737" duration="14885000" />
       <workItem from="1592282000864" duration="33003000" />
       <workItem from="1592406531034" duration="17678000" />
+      <workItem from="1592469248964" duration="11885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291091000" />
+    <option name="totallyTimeSpent" value="302976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19419643" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -335,7 +322,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.1557377" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.40327868" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.3295082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -378,13 +365,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/node_modules/body-parser/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="79" column="19" lean-forward="true" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/upload.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -455,20 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/studyDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="18" column="23" lean-forward="true" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/lqp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-210">
@@ -508,16 +474,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/asset/music.webp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/lqp.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="81" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/asset/music.webp" />
     <entry file="file://$PROJECT_DIR$/lqpreact/src/store/container/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -525,39 +482,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/store/reducer/login.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/lqp.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/home/home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/studyItem/studyItem.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/store/reducer/login.js" />
     <entry file="file://$PROJECT_DIR$/lqpreact/src/page/home/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -633,13 +558,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/store/reducer/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/store/reducer/register.js" />
     <entry file="file://$PROJECT_DIR$/lqpreact/src/store/action/study.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -647,27 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/navbar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="180" column="33" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lqpreact/src/store/action/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/store/reducer/loginRegister.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -736,27 +638,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/login.js">
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/pinlun.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/register/register.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="83" column="45" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="45" />
+        <state relative-caret-position="512">
+          <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/pinlun.jsx">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="69" column="34" lean-forward="true" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+        <state relative-caret-position="192">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/studyDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/studyItem/studyItem.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/navbar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2894">
+          <caret line="181" column="28" lean-forward="true" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/lqp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/register/register.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2400">
+          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/components/lqp.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lqpreact/src/page/home/home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="52" column="89" selection-start-line="52" selection-start-column="89" selection-end-line="52" selection-end-column="89" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

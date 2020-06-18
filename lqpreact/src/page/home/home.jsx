@@ -50,7 +50,7 @@ class Home extends Component {
                       return(
                           <Link to={ `/study/${ item.value }` } >
                               <div className={style.list_box}>
-                                  <div className="card" style={{width: "12rem",overflow:"hidden"}}>
+                                  <div className="card" style={{width: "12rem",height:"15rem", overflow:"hidden"}}>
                                       <div style={{width: "12rem", overflow:"hidden"}}>
                                           <img  src={ item.img } className="card-img-top" alt="..." />
                                       </div>
