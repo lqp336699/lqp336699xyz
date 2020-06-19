@@ -58,11 +58,11 @@ class Login extends React.Component{
         let { username,password } = this.state;
         this.props.loginAction({ username,password }).then(res=>{
             res.json().then(res2=>{
-                if(res2.login === "success"){
+                if(res2.token){
                     this.setState({
                         spinning:true
                     });
-                    Cookie.save("lqp336699_userId",{"username":username});
+                    Cookie.save("lqp336699_userId",{"token":res2.token});
                     setTimeout(()=>{
                         message.success({
                             content: '登陆成功跳转首页',
@@ -90,14 +90,13 @@ class Login extends React.Component{
             })
         })
     }
+    componentDidMount() {
 
-
+    }
 }
 
 const mapStateToProps = (store)=>{
-    return{
 
-    }
 };
 
 

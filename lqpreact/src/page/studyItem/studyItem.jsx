@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import homeStyle from './../home/css/home.css'
+import { connect } from 'react-redux'
+import { tokenAction } from './../../store/action/token'
 
 
 class StudyItem extends Component {
@@ -12,6 +14,9 @@ class StudyItem extends Component {
             </div>
         )
     }
+    componentDidMount() {
+        this.props.tokenAction()
+    }
 }
 
-export default StudyItem;
+export default connect(null,{ tokenAction })(StudyItem) ;

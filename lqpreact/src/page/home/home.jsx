@@ -6,6 +6,8 @@ import { BackTop } from 'antd';
 import Beian from './../components/beian'
 import { Skeleton } from 'antd';
 import { Link } from 'react-router-dom'
+import Cookie from "react-cookies";
+import { tokenAction } from './../../store/action/token'
 
 
 
@@ -46,9 +48,9 @@ class Home extends Component {
                 <div className={ classname(style.container,style.bg,"list") }>
                   {
                       studyList.length === 0  ? <div><Skeleton/><Skeleton/></div>  :
-                      studyList.map((item)=>{
+                      studyList.map((item,index)=>{
                       return(
-                          <Link to={ `/study/${ item.value }` } >
+                          <Link to={ `/study/${ item.value }` } key={index}>
                               <div className={style.list_box}>
                                   <div className="card" style={{width: "12rem",height:"15rem", overflow:"hidden"}}>
                                       <div style={{width: "12rem", overflow:"hidden"}}>
@@ -71,10 +73,10 @@ class Home extends Component {
         )
     }
     componentDidMount() {
-
+            this.props.tokenAction();
     }
 }
 
 
 
-export default connect()(Home);
+export default connect(null,{ tokenAction })(Home);

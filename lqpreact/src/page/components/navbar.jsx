@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { Spin } from 'antd';
 import Cookie from "react-cookies";
 import { removeUser } from "../../store/action/home";
+import { tokenAction } from "../../store/action/token";
 
 
 
@@ -143,10 +144,10 @@ class Navbar extends Component {
                                         管理员入口
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a className="dropdown-item" href="#" onClick={this.showModal}>添加科目</a>
-                                        <a className="dropdown-item" href="#" onClick={this.showModal}>删除科目</a>
+                                        <a className="dropdown-item" href="javascript:void(0);" onClick={this.showModal}>添加科目</a>
+                                        <a className="dropdown-item" href="javascript:void(0);" onClick={this.showModal}>删除科目</a>
                                         <div className="dropdown-divider"/>
-                                        <a className="dropdown-item" href="#" onClick={this.showModal}>修改科目</a>
+                                        <a className="dropdown-item" href="javascript:void(0);" onClick={this.showModal}>修改科目</a>
                                     </div>
                                 </li>
                                 { userInfo.username ? userUi : LR }
@@ -188,7 +189,10 @@ class Navbar extends Component {
                     spinning:false
                 })
             },200)
-        }
+        };
+    componentDidMount() {
+
+    }
 }
 
 const mapStateToProps = (store)=>{
@@ -200,4 +204,4 @@ const mapStateToProps = (store)=>{
 
 
 
-export default connect(mapStateToProps,{ removeUser })(Navbar) ;
+export default connect(mapStateToProps,{ removeUser,tokenAction })(Navbar) ;

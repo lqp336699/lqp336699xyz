@@ -1,4 +1,3 @@
-import { HOME_USERID } from './../container/index';
 
 const url = process.env.NODE_ENV !== 'development' ?  'http://lqp336699.xyz' :'http://localhost:5000';
 
@@ -15,17 +14,12 @@ export const loginAction =(userData)=> {
         }).then(res => {
            let res3 = res.clone();
             res.json().then(data=>{
-                dispatch(hanelLogin(data))
+                // dispatch(hanelLogin(data))
             });
             return res3;
         })
     }
 };
 
-const hanelLogin = (res)=>{
-    return{
-        type: HOME_USERID ,
-        payload:res
-    }
-};
+
 

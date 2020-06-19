@@ -10,6 +10,7 @@ import Pinlun from './../components/pinlun'
 import { BackTop } from 'antd';
 import { connect } from 'react-redux'
 import { getStudyDetail } from './../../store/action/getStudyDetail'
+import { tokenAction } from './../../store/action/token'
 
 class StudyDetail extends Component {
     constructor(props){
@@ -92,6 +93,8 @@ class StudyDetail extends Component {
         )
     }
     componentDidMount() {
+        this.props.tokenAction();
+
         const { id } = this.state;
         this.props.getStudyDetail(id).then(res=>{
             res.json().then(res2=>{
@@ -109,4 +112,4 @@ const mapStateToProps =(store)=>{
     }
 };
 
-export default connect(mapStateToProps,{ getStudyDetail })(StudyDetail);
+export default connect(mapStateToProps,{ getStudyDetail,tokenAction })(StudyDetail);

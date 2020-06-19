@@ -29,7 +29,6 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true }, f
 
     studyDetail.post('/getPinLun',function(req,res){
         let id = req.body.id;
-        console.log(`${id}PinLun`);
         db.collection(`${id}PinLun`). find({}).toArray(function(err, result) {
             if (err) throw err;
             res.json(result);
