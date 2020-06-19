@@ -7,6 +7,7 @@ import styleaa from './../home/css/home.css'
 import { Link } from 'react-router-dom'
 import Beian from './../components/beian'
 import Pinlun from './../components/pinlun'
+import Cookie from 'react-cookies'
 import { BackTop } from 'antd';
 import { connect } from 'react-redux'
 import { getStudyDetail } from './../../store/action/getStudyDetail'
@@ -93,7 +94,9 @@ class StudyDetail extends Component {
         )
     }
     componentDidMount() {
-        this.props.tokenAction();
+        if(Cookie.load("lqp336699_userId")){
+            this.props.tokenAction();
+        }
 
         const { id } = this.state;
         this.props.getStudyDetail(id).then(res=>{

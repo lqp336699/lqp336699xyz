@@ -73,7 +73,9 @@ class Home extends Component {
         )
     }
     componentDidMount() {
+        if(Cookie.load("lqp336699_userId")){
             this.props.tokenAction();
+        }
     }
 }
 

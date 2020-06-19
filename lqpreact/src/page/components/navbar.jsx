@@ -196,7 +196,6 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (store)=>{
-    console.log(store.saveUserReducer);
     return{
         userInfo:store.saveUserReducer
     }
