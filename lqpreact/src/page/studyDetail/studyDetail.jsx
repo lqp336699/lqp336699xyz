@@ -33,43 +33,16 @@ class StudyDetail extends Component {
             fontSize: 14,
         };
         const studyDetailBox =(
-            this.state.studyDetail.map(item=>{
+            this.state.studyDetail.map(item =>{
                 if(item.title){
                     return(
-                        <Link to={`/study/${this.state.id}/studyItem`}>
-                            <a href="#" className="list-group-item list-group-item-action list-group-item-dark" key={item._id}>{item.title}</a>
+                        <Link to={`/study/${this.state.id}/studyItem/${item.title}`}>
+                            <a href="#" style={{margin:"0 0 1.5rem 0" }} className="list-group-item list-group-item-action list-group-item-dark" key={item._id}>{item.title}</a>
                         </Link>
                     )
                 }})
     );
-        // let i=1;
-        // const paginationBox =(
-        //     <nav aria-label="Page navigation example" className={style.navPagination}>
-        //         <ul className="pagination">
-        //             <li className="page-item">
-        //                 <a className="page-link" href="#" aria-label="Previous">
-        //                     <span aria-hidden="true">&laquo;</span>
-        //                 </a>
-        //             </li>
-        //             {
-        //                 studyDetail.map(index=>{
-        //                     i++;
-        //                     if(index%6===0) {
-        //                         return(
-        //                             <li className="page-item"><a className="page-link" href="#">i</a></li>
-        //                         )
-        //                     }
-        //                 })
-        //             }
-        //             <li className="page-item">
-        //                 <a className="page-link" href="#" aria-label="Next">
-        //                     <span aria-hidden="true">&raquo;</span>
-        //                 </a>
-        //             </li>
-        //         </ul>
-        //     </nav>
-        //
-        // );
+
         const nonestudyDetail = (
                     <Empty style={{margin:"8rem 0 0 0"}} description='我很忙，没空写' />
         );
@@ -83,7 +56,6 @@ class StudyDetail extends Component {
                             this.state.studyDetail.length === 0 ? nonestudyDetail : studyDetailBox
                         }
                     </div>
-                    {/*{ paginationBox }*/}
                     <Pinlun lesson={this.props.match.params.id} />
                     <Beian />
                     <BackTop className={styleaa.upBox}>
@@ -93,6 +65,7 @@ class StudyDetail extends Component {
             </div>
         )
     }
+
     componentDidMount() {
         if(Cookie.load("lqp336699_userId")){
             this.props.tokenAction();

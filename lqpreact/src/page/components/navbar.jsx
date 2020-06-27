@@ -23,6 +23,9 @@ class Navbar extends Component {
     state = {
         visible: false,
         spinning:false,
+        superUserName:'',
+        superPassword:'',
+        superUsera:false,
     };
 
     showModal = () => {
@@ -46,6 +49,7 @@ class Navbar extends Component {
     render() {
 
         let { userInfo } = this.props.userInfo;
+        let { superPassword,superUserName } = this.state;
         const LR = (
             <>
                 <Link to='/login'>
@@ -74,48 +78,65 @@ class Navbar extends Component {
         );
 
         const spuerUser = (
-            <Form
-                name="normal_login"
-                className="login-form"
-                initialValues={{
-                    remember: true,
-                }}
-            >
-                <Form.Item
-                    name="username"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Username!',
-                        },
-                    ]}
+
+                <Form
+                    name="normal_login"
+                    className="login-form"
+                    initialValues={{
+                        remember: true,
+                    }}
                 >
-                    <Input prefix={<UserOutlined className="site-form-item-icon"/>}
-                           placeholder="Username"/>
-                </Form.Item>
-                <Form.Item
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]}
-                >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon"/>}
-                        type="password"
-                        placeholder="Password"
-                    />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        Log in
-                    </Button>
-                </Form.Item>
-            </Form>
+                    <Form.Item
+                        name="username"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your Username!',
+                            },
+                        ]}
+                    >
+                        <Input prefix={
+                            <UserOutlined className="site-form-item-icon"/>}
+                               placeholder="Username"
+                               value = { this.state.superUserName }
+                               onChange={e=>this.setState({
+                                   superUserName:e.target.value
+                               })}
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="password"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your Password!',
+                            },
+                        ]}
+                    >
+                        <Input
+                            value = { this.state.superPassword }
+                            prefix={<LockOutlined className="site-form-item-icon"/>}
+                            type="password"
+                            placeholder="Password"
+                            onChange={e=>this.setState({
+                                superPassword:e.target.value
+                            })}
+                        />
+                    </Form.Item>
+                    <Form.Item>
+                        <Link to={ superUserName==="李清平"&&superPassword==="813204545" ? '/super' : false } >
+                            <Button type="primary"
+                                    htmlType="submit"
+                                    className="login-form-button"
+                                    onClick={this.onFinsh}
+                            >
+                                Log in
+                            </Button>
+                        </Link>
+                    </Form.Item>
+                </Form>
         );
-            return (
+        return (
                 <div className={classname(style.nav, style.padd, "bg-light")}>
                     <Spin tip="Loading..." spinning={this.state.spinning} />
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -190,8 +211,15 @@ class Navbar extends Component {
                 })
             },200)
         };
+
     componentDidMount() {
 
+    }
+
+    onFinsh=()=>{
+        if(this.state.superUserName!=="李清平"|| this.state.superPassword!=="813204545"){
+            alert("管理员账号密码错误，请联系管理员李清平qq813204545")
+        }
     }
 }
 

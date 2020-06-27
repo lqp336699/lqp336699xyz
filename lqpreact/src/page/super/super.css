@@ -1,0 +1,14 @@
+.box{
+    background-color: rgb(244,244,244);
+}
+.btn{
+    margin-top: 0.5rem;
+}
+
+:global(.demo-editor){
+    height: 25rem;
+}
+
+div .title{
+    margin-bottom: 1rem;
+}

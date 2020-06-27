@@ -1,0 +1,42 @@
+.title{
+    color:red;
+    margin: 3rem 0;
+}
+.box{
+    background-color: rgb(244,244,244);
+}
+
+.step li{
+    font-size:1.5rem;
+    color:deepskyblue;
+    list-style-type: decimal;
+    margin-top: 2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding:0.4rem 3rem 0.2rem;
+}
+.stepTitle{
+    margin: 0;
+    padding: 0;
+    color:#fa541c;
+}
+
+.stepItem{
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    text-indent: 2rem;
+    color:#888;
+}
+
+.noData{
+    height: 23.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.herf{
+    font-size: 0.8rem;
+}
+.link{
+    text-indent: 1rem;
+}
