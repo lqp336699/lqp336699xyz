@@ -1,12 +1,15 @@
 const express = require('express');
 const home  = require('./home');
+const path = require('path');
 const studyDetail  = require('./studyDetail');
 const login  = require('./login');
 const register  = require('./register');
+const content  = require('./content');
 const bodyParser = require('body-parser');
 const userLogin = require('./userLogin');
-var jwt = require('jsonwebtoken');
+const saveLesson = require('./saveLesson');
 const app = express();
+
 const port = 5000;
 
 app.all('*', function(req, res, next) {
@@ -18,6 +21,7 @@ app.all('*', function(req, res, next) {
     res.header("Content-Type", "application/json;charset=utf-8");
     next();
 });
+
 
 app.use(function (req, res, next) {
     if (req.url ===  '/user/login' && req.method !== 'OPTIONS' ) {
@@ -39,7 +43,9 @@ app.use('/api/login',login);
 app.use('/api/study',studyDetail);
 app.use('/api/register',register);
 app.use('/user/login',userLogin);
-
+app.use('/',content);
+app.use('/superUser/saveLesson',saveLesson);
+app.use(express.static(path.join(__dirname,'./static')));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
