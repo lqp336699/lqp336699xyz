@@ -43,7 +43,7 @@ app.use('/api/login',login);
 app.use('/api/study',studyDetail);
 app.use('/api/register',register);
 app.use('/user/login',userLogin);
-app.use('/',content);
+app.use('/getStudy',content);
 app.use('/superUser/saveLesson',saveLesson);
 app.use(express.static(path.join(__dirname,'./static')));
 

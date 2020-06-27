@@ -61,7 +61,7 @@ class StudyItem extends Component {
         }
         const url = process.env.NODE_ENV !== 'development' ?  'http://lqp336699.xyz' :'http://localhost:5000';
 
-        fetch(`${url}/${this.state.id}/${this.state.title}/content`,{
+        fetch(`${url}/getStudy/${this.state.id}/${this.state.title}/content`,{
             headers:{
                 'Content-Type':'application/json'
             },
